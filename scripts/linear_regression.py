@@ -1,9 +1,9 @@
 """
-Linear Regression by Hand - linear regression cost function example 
+Linear Regression by Hand - linear regression cost function example
 """
 import numpy as np
-import pandas as pd 
-import matplotlib.pyplot as plt 
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def linear_func(x, w=0, b=0):
     '''Linear function for our regression line'''
@@ -50,7 +50,6 @@ def main():
     plt.plot(bbs, mses, 'o-')
     plt.title('Cost as a function of b')
     plt.xlabel('b')
-
     plt.show()
 
 if __name__ == '__main__':
