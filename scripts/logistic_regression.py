@@ -34,7 +34,7 @@ def main():
     model.compile(SGD(lr=0.5), 'binary_crossentropy', metrics=['accuracy'])
     model.summary()
 
-    # college inputs and outputs
+    # collect inputs and outputs
     X = df[['Time (min)']].values
     y = df['Buy'].values
 
