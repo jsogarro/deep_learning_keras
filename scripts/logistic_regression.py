@@ -58,6 +58,5 @@ def main():
     print('Model Accuracy: {}'.format(accuracy_score(y_train, model.predict(X_train) > 0.5)))
     print('Test Accuracy: {}'.format(accuracy_score(y_test, model.predict(X_test) > 0.5)))
 
-
 if __name__ == '__main__':
     main()
