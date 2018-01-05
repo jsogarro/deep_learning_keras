@@ -2,8 +2,8 @@
 Linear Regression with Keras -- linear regression performed using Keras
 """
 import numpy as np
-import pandas as pd 
-import matplotlib.pyplot as plt 
+import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error as mse
 from sklearn.metrics import r2_score
@@ -14,13 +14,13 @@ from keras.optimizers import Adam, SGD
 
 
 def main():
-    # import our data 
+    # import our data
     df = pd.read_csv('../data/weight-height.csv')
 
     def linear_func(x, w=0, b=0):
         '''Linear function for our regression line'''
         return x * w + b
-        
+
     # calculate x
     x = np.linspace(55, 80, 100)
 
@@ -43,12 +43,12 @@ def main():
     model.fit(X, y_actual, epochs=100)
 
     y_pred = model.predict(X)
-    
+
     # split our data
-    X_train, X_test, y_train, y_test = train_test_split(X, 
+    X_train, X_test, y_train, y_test = train_test_split(X,
                                                         y_actual,
                                                         test_size=0.2)
-    
+
     # get the model weights and biases and reset them
     W, B = model.get_weights()
     W[0, 0] = 0.0
@@ -57,10 +57,10 @@ def main():
 
     # re-train the model
     model.fit(X_train, y_train, epochs=100)
-    
+
     y_train_pred = model.predict(X_train).ravel()
     y_test_pred = model.predict(X_test).ravel()
-    
+
     y_train_mse = mse(y_train, y_train_pred)
     y_test_mse = mse(y_test, y_test_pred)
 
